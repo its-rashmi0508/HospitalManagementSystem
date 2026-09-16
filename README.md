@@ -175,43 +175,38 @@ Spring Security is used to restrict POST, PUT, and DELETE operations.
 
 # 🏗️ System Architecture
 
-text
-                 ┌─────────────────────┐
-                 │    Web Browser      │
-                 │  HTML/CSS/JavaScript│
-                 └──────────┬──────────┘
-                            │
-                            │ HTTP Requests
-                            ▼
-                 ┌─────────────────────┐
-                 │    Spring Boot      │
-                 │     REST APIs       │
-                 └──────────┬──────────┘
-                            │
-                    ┌───────┴────────┐
-                    │                │
-                    ▼                ▼
-             ┌─────────────┐  ┌──────────────┐
-             │   Services  │  │   Security   │
-             └──────┬──────┘  └──────────────┘
-                    │
-                    ▼
-             ┌─────────────┐
-             │ Spring Data │
-             │     JPA     │
-             └──────┬──────┘
-                    │
-                    ▼
-             ┌─────────────┐
-             │  Hibernate  │
-             │     ORM     │
-             └──────┬──────┘
-                    │
-                    ▼
-             ┌─────────────┐
-             │    MySQL    │
-             │  HospitalDb │
-             └─────────────┘
+```mermaid
+flowchart TD
+
+    A[🌐 Web Browser<br/>HTML / CSS / JavaScript]
+    
+    B[🔐 Spring Security]
+    
+    C[🚀 Spring Boot<br/>REST APIs]
+    
+    D[👤 Patient Services]
+    E[👨‍⚕️ Doctor Services]
+    F[📅 Appointment Services]
+    
+    G[📦 Spring Data JPA]
+    
+    H[⚙️ Hibernate ORM]
+    
+    I[(🗄️ MySQL<br/>HospitalDb)]
+
+    A -->|HTTP Requests| B
+    B --> C
+
+    C --> D
+    C --> E
+    C --> F
+
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H
+    H --> I
 ---
 
 ##👩‍💻 Author
