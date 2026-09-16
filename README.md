@@ -175,7 +175,7 @@ Spring Security is used to restrict POST, PUT, and DELETE operations.
 
 # 🏗️ System Architecture
 
-```mermaid
+mermaid
 flowchart TD
 
     A[🌐 Web Browser<br/>HTML / CSS / JavaScript]
