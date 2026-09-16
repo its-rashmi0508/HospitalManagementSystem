@@ -1,203 +1,223 @@
 # 🏥 Hospital Management System
 
-A **web-based Hospital Management System** developed using **Java Servlet, JSP, JDBC, MySQL, Bootstrap, Maven, and Apache Tomcat**. The system is designed to simplify and manage common hospital operations such as patient registration, doctor management, and appointment scheduling through an easy-to-use web interface.
+A full-stack Hospital Management System developed using **Java, Spring Boot, Spring Data JPA, Hibernate, MySQL, HTML, CSS, and JavaScript**.
 
-This project was developed as part of my **Java Internship Project** to demonstrate the practical implementation of Java web technologies and database connectivity.
+The system provides REST APIs and a web-based dashboard for managing patients, doctors, and appointments.
 
 ---
 
-## 📌 Features
+## 📌 Project Overview
 
-The Hospital Management System provides the following features:
+The Hospital Management System is designed to simplify basic hospital record management through a centralized web application.
+
+The application provides modules for:
+
+- 👤 Patient Management
+- 👨‍⚕️ Doctor Management
+- 📅 Appointment Management
+- 📊 Dashboard
+- 🔐 User Authentication and Access Control
+- 🗄️ MySQL Database Integration
+
+The backend is developed using Spring Boot and exposes RESTful APIs that communicate with a MySQL database through Spring Data JPA and Hibernate.
+
+The frontend provides a simple and responsive dashboard for interacting with the backend APIs.
+
+---
+
+## ✨ Features
 
 ### 👤 Patient Management
 
-* Add new patients to the system
-* Register patient details through a user-friendly form
-* Store patient information securely in the MySQL database
+The Patient Management module allows authorized users to:
+
+- Add new patients
+- View patient records
+- Search patients
+- Update patient information
+- Delete patient records
+
+Patient information includes:
+
+- Patient ID
+- First Name
+- Last Name
+- Date of Birth
+- Gender
+- Email
+- Phone Number
+- Address
+- Blood Group
+
+---
 
 ### 👨‍⚕️ Doctor Management
 
-* Add and manage doctor information
-* Maintain doctor details and specialization
+The Doctor Management module allows users to manage doctor information.
+
+Features include:
+
+- Add doctors
+- View doctors
+- Update doctor information
+- Delete doctors
+
+Doctor information includes:
+
+- Doctor ID
+- First Name
+- Last Name
+- Specialization
+- Email
+- Phone Number
+- Department
+- Years of Experience
+
+---
 
 ### 📅 Appointment Management
 
-* Schedule appointments between patients and doctors
-* Manage appointment-related information
+The Appointment module manages appointments between patients and doctors.
 
-### 🗄️ Database Connectivity
+Features include:
 
-* Connects the Java web application with a MySQL database
-* Uses JDBC for performing database operations
+- Create appointments
+- View appointments
+- Update appointments
+- Delete appointments
+- View appointments by patient
+- View appointments by doctor
+- View appointments by status
 
-### 📊 Responsive Dashboard
+Appointment information includes:
 
-* Clean and responsive user interface
-* Developed using Bootstrap 5
-* Provides easy navigation between different modules
-
----
-
-## 🛠️ Technologies Used
-
-| Technology           | Purpose                                        |
-| -------------------- | ---------------------------------------------- |
-| **Java**             | Core programming language                      |
-| **JSP**              | Creating dynamic web pages                     |
-| **Servlet**          | Handling client requests and application logic |
-| **JDBC**             | Connecting Java application with MySQL         |
-| **MySQL**            | Database management                            |
-| **Bootstrap 5**      | Responsive and attractive user interface       |
-| **Apache Tomcat 10** | Web application server                         |
-| **Maven**            | Project dependency and build management        |
+- Appointment ID
+- Patient
+- Doctor
+- Appointment Date and Time
+- Reason for Visit
+- Appointment Status
+- Notes
 
 ---
 
-## 📂 Project Structure
+### 📊 Dashboard
 
-```text
-HospitalManagementSystem
-│
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── Java source files
-│       │
-│       └── webapp/
-│           ├── JSP pages
-│           ├── CSS / Bootstrap files
-│           └── WEB-INF/
-│
-├── pom.xml
-├── database.sql
-├── README.md
-└── screenshots/
-```
+The web dashboard displays:
+
+- Total Patients
+- Total Doctors
+- Total Appointments
+- Quick Actions
+- System Status
+
+The dashboard retrieves the data dynamically from the Spring Boot REST APIs.
 
 ---
 
-## ⚙️ How to Run the Project
+### 🔐 Authentication and Access Control
 
-Follow the steps below to run the Hospital Management System on your local machine.
+The project includes Spring Security for protecting modification operations.
 
-### 1. Clone or Download the Project
+The intended access model is:
 
-Download the project from GitHub or clone the repository to your local system.
+| Operation | Access |
+|-----------|--------|
+| View Patients | Public |
+| View Doctors | Public |
+| View Appointments | Public |
+| Add Patient | Authorized User |
+| Update Patient | Authorized User |
+| Delete Patient | Authorized User |
+| Add Doctor | Authorized User |
+| Update Doctor | Authorized User |
+| Delete Doctor | Authorized User |
+| Add Appointment | Authorized User |
+| Update Appointment | Authorized User |
+| Delete Appointment | Authorized User |
 
-### 2. Install Required Software
-
-Make sure the following software is installed:
-
-* Java JDK
-* MySQL Server
-* Apache Tomcat 10
-* Maven
-* IDE such as IntelliJ IDEA or Eclipse
-
-### 3. Set Up the Database
-
-1. Open **MySQL Workbench**.
-2. Create a database for the project.
-3. Open and execute the `database.sql` file provided in the project.
-
-### 4. Configure Database Credentials
-
-Open the `DBConnection.java` file and configure your MySQL credentials:
-
-```java
-String url = "jdbc:mysql://localhost:3306/your_database_name";
-String username = "root";
-String password = "your_password";
-```
-
-Update the database name, username, and password according to your MySQL configuration.
-
-### 5. Build the Project
-
-Use Maven to build the project:
-
-```bash
-mvn clean package
-```
-
-This will generate the `.war` file for deployment.
-
-### 6. Deploy on Apache Tomcat
-
-1. Copy the generated WAR file to the `webapps` folder of Apache Tomcat.
-2. Start the Tomcat server.
-3. Open the application in your browser.
+Spring Security is used to restrict POST, PUT, and DELETE operations.
 
 ---
 
-## 🌐 Application URL
+# 🛠️ Technologies Used
 
-Once the application is deployed successfully, open:
+## Backend
 
-`http://localhost:9090/HospitalManagementSystem`
+- Java 17
+- Spring Boot 3.3.4
+- Spring Web
+- Spring Data JPA
+- Hibernate ORM
+- Spring Security
+- Maven
 
-> **Note:** The port number may be different depending on your Apache Tomcat configuration.
+## Database
 
----
+- MySQL
 
-## 📸 Screenshots
+## Frontend
 
-Screenshots of the application can be added to the `screenshots` folder.
+- HTML5
+- CSS3
+- JavaScript
+- Fetch API
 
-Example:
+## Development Tools
 
-```text
-screenshots/
-├── dashboard.png
-├── add_patient.png
-├── doctor_management.png
-└── appointment_management.png
-```
-
-You can display screenshots in the README using:
-
-```markdown
-![Dashboard](screenshots/dashboard.png)
-```
-
----
-
-## 🔮 Future Enhancements
-
-The following features can be added in future versions:
-
-* View, edit, and delete patient records
-* Advanced doctor management
-* Complete appointment scheduling system
-* Search and filter functionality
-* Patient medical history
-* Billing and payment management
-* User authentication and role-based access
-* Improved dashboard statistics
+- IntelliJ IDEA
+- MySQL Workbench
+- Postman
+- Git
+- GitHub
 
 ---
 
-## 🎯 Learning Outcomes
+# 🏗️ System Architecture
 
-Through this project, I gained practical experience in:
-
-* Java Web Application Development
-* Java Servlets and JSP
-* JDBC and MySQL Database Connectivity
-* CRUD Operations
-* Maven Project Management
-* Apache Tomcat Deployment
-* Responsive Web Design using Bootstrap
-
+text
+                 ┌─────────────────────┐
+                 │    Web Browser      │
+                 │  HTML/CSS/JavaScript│
+                 └──────────┬──────────┘
+                            │
+                            │ HTTP Requests
+                            ▼
+                 ┌─────────────────────┐
+                 │    Spring Boot      │
+                 │     REST APIs       │
+                 └──────────┬──────────┘
+                            │
+                    ┌───────┴────────┐
+                    │                │
+                    ▼                ▼
+             ┌─────────────┐  ┌──────────────┐
+             │   Services  │  │   Security   │
+             └──────┬──────┘  └──────────────┘
+                    │
+                    ▼
+             ┌─────────────┐
+             │ Spring Data │
+             │     JPA     │
+             └──────┬──────┘
+                    │
+                    ▼
+             ┌─────────────┐
+             │  Hibernate  │
+             │     ORM     │
+             └──────┬──────┘
+                    │
+                    ▼
+             ┌─────────────┐
+             │    MySQL    │
+             │  HospitalDb │
+             └─────────────┘
 ---
 
-## 👩‍💻 Author
+##👩‍💻 Author
 
 **Rashmi Kumari**
 
 ### Java Internship Project
 
 ---
-
-⭐ If you found this project useful, consider giving it a star on GitHub!
