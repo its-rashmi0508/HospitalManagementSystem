@@ -1,5 +1,3 @@
-<img width="1536" height="1024" alt="system-architecture" src="https://github.com/user-attachments/assets/f89807db-cfe8-4874-a26f-7bfbb81704da" />
-<img width="1536" height="1024" alt="system-architecture" src="https://github.com/user-attachments/assets/1eac2e0d-a6d5-469f-9f31-77046e75e06e" />
 # 🏥 Hospital Management System
 
 A full-stack **Hospital Management System** developed using **Java, Spring Boot, Spring Data JPA, Hibernate, MySQL, HTML, CSS, and JavaScript**.
