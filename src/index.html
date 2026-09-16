@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        🏥 <span>Hospital HMS</span>
+    </div>
+
+    <ul class="menu">
+
+        <li class="active" onclick="showSection('dashboard')">
+            📊 <span>Dashboard</span>
+        </li>
+
+        <li onclick="showSection('patients')">
+            👤 <span>Patients</span>
+        </li>
+
+        <li onclick="showSection('doctors')">
+            👨‍⚕️ <span>Doctors</span>
+        </li>
+
+        <li onclick="showSection('appointments')">
+            📅 <span>Appointments</span>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div>
+            <h1>Hospital Management System</h1>
+            <p>Welcome to your hospital dashboard</p>
+        </div>
+
+        <div class="user">
+            👩‍💻 <strong>Rashmi</strong>
+        </div>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboard" class="section">
+
+        <h2>Dashboard</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">👤</div>
+
+                <div>
+                    <h3>Total Patients</h3>
+                    <p id="patientCount">0</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">👨‍⚕️</div>
+
+                <div>
+                    <h3>Total Doctors</h3>
+                    <p id="doctorCount">0</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">📅</div>
+
+                <div>
+                    <h3>Appointments</h3>
+                    <p id="appointmentCount">0</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="dashboard-box">
+
+            <h2>Quick Actions</h2>
+
+            <div class="actions">
+
+                <button onclick="showSection('patients')">
+                    ➕ Add Patient
+                </button>
+
+                <button onclick="showSection('doctors')">
+                    ➕ Add Doctor
+                </button>
+
+                <button onclick="showSection('appointments')">
+                    📅 View Appointments
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <div class="dashboard-box">
+
+            <h2>System Status</h2>
+
+            <div class="status">
+
+                <p>
+                    🟢 Backend API
+                    <span>Running</span>
+                </p>
+
+                <p>
+                    🟢 MySQL Database
+                    <span>Connected</span>
+                </p>
+
+                <p>
+                    🟢 Spring Boot
+                    <span>Running on Port 8082</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PATIENTS ================= -->
+
+    <section id="patients" class="section hidden">
+
+        <h2>Patients</h2>
+
+        <div class="dashboard-box">
+
+            <h3>Patient Management</h3>
+
+            <p>
+                Manage patient records, create new patients,
+                update patient information and delete records.
+            </p>
+
+            <button onclick="loadPatients()">
+                🔄 Load Patients
+            </button>
+
+            <div id="patientList"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DOCTORS ================= -->
+
+    <section id="doctors" class="section hidden">
+
+        <h2>Doctors</h2>
+
+        <div class="dashboard-box">
+
+            <h3>Doctor Management</h3>
+
+            <p>
+                Manage doctors and their specialization,
+                department and contact information.
+            </p>
+
+            <button onclick="loadDoctors()">
+                🔄 Load Doctors
+            </button>
+
+            <div id="doctorList"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= APPOINTMENTS ================= -->
+
+    <section id="appointments" class="section hidden">
+
+        <h2>Appointments</h2>
+
+        <div class="dashboard-box">
+
+            <h3>Appointment Management</h3>
+
+            <p>
+                View and manage patient appointments.
+            </p>
+
+            <button onclick="loadAppointments()">
+                🔄 Load Appointments
+            </button>
+
+            <div id="appointmentList"></div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
