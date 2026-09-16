@@ -172,27 +172,19 @@ Spring Security is used to restrict POST, PUT, and DELETE operations.
 - GitHub
 
 ---
+## 🏗️ System Architecture
 
-# 🏗️ System Architecture
-
-mermaid
+```mermaid
 flowchart TD
-
-    A[🌐 Web Browser<br/>HTML / CSS / JavaScript]
-    
-    B[🔐 Spring Security]
-    
-    C[🚀 Spring Boot<br/>REST APIs]
-    
-    D[👤 Patient Services]
-    E[👨‍⚕️ Doctor Services]
-    F[📅 Appointment Services]
-    
-    G[📦 Spring Data JPA]
-    
-    H[⚙️ Hibernate ORM]
-    
-    I[(🗄️ MySQL<br/>HospitalDb)]
+    A["🌐 Web Browser<br/>HTML / CSS / JavaScript"]
+    B["🔐 Spring Security"]
+    C["🚀 Spring Boot<br/>REST APIs"]
+    D["👤 Patient Services"]
+    E["👨‍⚕️ Doctor Services"]
+    F["📅 Appointment Services"]
+    G["📦 Spring Data JPA"]
+    H["⚙️ Hibernate ORM"]
+    I[("🗄️ MySQL<br/>HospitalDb")]
 
     A -->|HTTP Requests| B
     B --> C
@@ -207,6 +199,9 @@ flowchart TD
 
     G --> H
     H --> I
+```
+
+## 🔌 REST API Endpoints
 ---
 
 ##👩‍💻 Author
